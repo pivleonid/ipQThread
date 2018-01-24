@@ -79,7 +79,7 @@ static const uint qt_meta_data_PingModel[] = {
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::QByteArray,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -96,8 +96,7 @@ void PingModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->signalData((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->endThread(); break;
         case 2: _t->verifyStatus(); break;
-        case 3: { QByteArray _r = _t->readResult();
-            if (_a[0]) *reinterpret_cast< QByteArray*>(_a[0]) = std::move(_r); }  break;
+        case 3: _t->readResult(); break;
         case 4: _t->disconPing(); break;
         case 5: _t->run(); break;
         case 6: _t->error(); break;

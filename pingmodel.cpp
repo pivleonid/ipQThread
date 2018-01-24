@@ -38,18 +38,16 @@ void PingModel::verifyStatus(){
     }
 }
 
-QByteArray PingModel::readResult(){
+void PingModel::readResult(){
 
     running = true;
     QByteArray a = ping->readAll();
     if(a == "")
-        return("AA");
+        return;
     QTextCodec* codec =  QTextCodec::codecForName("cp-866");
     QString fio = codec->toUnicode(a.data());
-
-    //была тут
     emit signalData(fio);
-   return( "YA");
+
 }
 
 
@@ -59,25 +57,30 @@ void PingModel::disconPing(){
     if(running == false)
         return;
 
-   QProcess::execute(QString("taskkill /PID %1 /F").arg(ping->processId()));
-   QProcess::execute(QString("kill -SIGINT %1").arg(ping->processId()));
-   //readEndResult(0);
-   closeProcess = true;
-   running = false;
-   //ping->kill(); //убивает процесс
-   ping->close();
-   //emit endThread();
+    QProcess::execute(QString("taskkill /PID %1 /F").arg(ping->processId()));
+    QProcess::execute(QString("kill -SIGINT %1").arg(ping->processId()));
+    closeProcess = true;
+    running = false;
+    ping->close();
 
 }
 
 void PingModel::run(){
-closeProcess = false;
+#ifndef LINUXBASE
+    closeProcess = false;
     QString command = "ping";
     QStringList args;
     args << PingModel::ip; //-t для бесконечных запросов
     ping->start(command, args); //вызывает сигнал started()
+#endif
 
-
+#ifdef LINUXBASE
+    closeProcess = false;
+    QString command = "ping";
+    QStringList args;
+    args <<"-t"<< PingModel::ip; //-t для бесконечных запросов
+    ping->start(command, args); //вызывает сигнал started()
+#endif
 
 }
 

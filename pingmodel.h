@@ -18,7 +18,7 @@ public:
         return running;
     }
     bool finished();
-     void lineEditRead(QString ip);
+    void lineEditRead(QString ip);
     
 signals:
     void signalData(QString data);
@@ -26,11 +26,10 @@ signals:
     
 public slots:
     void verifyStatus();
-   // QByteArray readEndResult( int);
-    QByteArray readResult();
+    void readResult();
     void disconPing();
-     void run();
-     void error();
+    void run();
+    void error();
 
 private:
     QProcess *ping;
