@@ -23,6 +23,7 @@ public:
 signals:
     void signalData(QString data);
     void endThread();
+    void signalError();
     
 public slots:
     void verifyStatus();

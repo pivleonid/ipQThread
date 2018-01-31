@@ -580,6 +580,9 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QCheckBox \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qcheckbox.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QGridLayout \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlayout.h \
@@ -610,21 +613,17 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QMenuBar \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstatusbar.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QSpacerItem \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QTextBrowser \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextbrowser.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextedit.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextdocument.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QToolBar \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QFile
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/pingmodel.o: pingmodel.cpp C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \

@@ -9,6 +9,8 @@
 #include <QDataStream>
 #include "pingmodel.h"
 #include <QThread>
+#include <QApplication>
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +34,14 @@ public slots:
     void clearSlot();
     void connectSlot();
     void disconnectSlot();
+    void updateScreen(bool);
+    void closeEvent(QCloseEvent* event);
+    void errorMsb(){
+        QMessageBox msb;
+        msb.setText("Такого адреса не существует");
+        disconnectSlot();
+        msb.exec();
+    }
 
 };
 
