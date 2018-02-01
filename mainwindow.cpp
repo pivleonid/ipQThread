@@ -11,12 +11,23 @@
 #include <QStyle>
 #include <QDesktopWidget>
 
+#ifdef LINUXBASE
+#include <QTextCodec>
+#endif
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+#ifdef LINUXBASE
+ QTextCodec* codec = QTextCodec::codecForName("UTF-8");
+ QTextCodec::setCodecForLocale(codec);
+ QTextCodec::setCodecForCStrings(codec);
+ QTextCodec::setCodecForTr(codec);
+#endif
+
     ui->setupUi(this);
+
 
     QDesktopWidget *pDescwidget = QApplication::desktop();
     move(pDescwidget->width()/2-width()/2, pDescwidget->height()/2-height()/2);
