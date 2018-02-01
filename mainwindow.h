@@ -36,6 +36,7 @@ public slots:
     void disconnectSlot();
     void updateScreen(bool);
     void closeEvent(QCloseEvent* event);
+    void testStart();
     void errorMsb(){
         QMessageBox msb;
         msb.setText("Такого адреса не существует");

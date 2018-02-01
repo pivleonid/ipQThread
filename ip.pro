@@ -36,4 +36,4 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
-#DEFINES += LINUXBASE
+unix: {DEFINES += LINUXBASE}

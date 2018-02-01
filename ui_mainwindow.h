@@ -41,15 +41,15 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QLabel *statusLbl;
     QGridLayout *gridLayout;
-    QTextBrowser *browser_dbg;
     QPushButton *clearText;
     QSpacerItem *horizontalSpacer;
+    QTextBrowser *browser_dbg;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(626, 578);
+        MainWindow->resize(626, 445);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -121,12 +121,6 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetFixedSize);
-        browser_dbg = new QTextBrowser(centralWidget);
-        browser_dbg->setObjectName(QStringLiteral("browser_dbg"));
-        browser_dbg->setEnabled(true);
-
-        gridLayout->addWidget(browser_dbg, 0, 0, 1, 2);
-
         clearText = new QPushButton(centralWidget);
         clearText->setObjectName(QStringLiteral("clearText"));
 
@@ -135,6 +129,12 @@ public:
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 1, 1, 1, 1);
+
+        browser_dbg = new QTextBrowser(centralWidget);
+        browser_dbg->setObjectName(QStringLiteral("browser_dbg"));
+        browser_dbg->setEnabled(true);
+
+        gridLayout->addWidget(browser_dbg, 0, 0, 1, 2);
 
 
         gridLayout_4->addLayout(gridLayout, 2, 0, 1, 1);

@@ -7,8 +7,9 @@
 #include <QSettings>
 #include <QFile>
 
-
-
+#include <QDesktopWidget>
+#include <QStyle>
+#include <QDesktopWidget>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -16,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QDesktopWidget *pDescwidget = QApplication::desktop();
+    move(pDescwidget->width()/2-width()/2, pDescwidget->height()/2-height()/2);
 
 
     /* Создаем строку для регулярного выражения */
@@ -39,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
     model = new PingModel;
 
     connect(model, SIGNAL(signalData(QString)), ui->browser_dbg, SLOT(append(QString)));
+    connect(model, SIGNAL(signalStartData()), this, SLOT(testStart()));
     connect(ui->btn_connect, SIGNAL(clicked()), this, SLOT(connectSlot()));
     connect(ui->btn_disconnect, SIGNAL(clicked(bool)),this, SLOT(disconnectSlot()));
     connect(ui->clearText, SIGNAL(clicked(bool)),  this, SLOT(clearSlot()));
@@ -79,9 +84,7 @@ MainWindow::MainWindow(QWidget *parent) :
      }
      QMainWindow::resize(QMainWindow::sizeHint());
 
-     QString ai = QString(QSysInfo::windowsVersion());
-    int i;
-    i++;
+
 
 
 }
@@ -90,15 +93,23 @@ void MainWindow::updateScreen(bool flag){
     if (flag == true){
         ui->browser_dbg->setVisible(true);
         ui->clearText->setVisible(true);
-         QMainWindow::resize(QMainWindow::sizeHint());
+        QMainWindow::resize(626, 600);
+        QMainWindow::setMaximumSize(626, 600);
+        QMainWindow::resize(626, 600);
+
     }
     else{
         ui->browser_dbg->setVisible(false);
         ui->clearText->setVisible(false);
-         QMainWindow::adjustSize();
+         QMainWindow::resize(626, 100);
+         QMainWindow::setMaximumSize(626, 100);
 
     }
 
+}
+
+void MainWindow::testStart(){
+     ui->statusLbl->setText("Тест запущен");
 }
 
 MainWindow::~MainWindow(){
@@ -106,9 +117,9 @@ MainWindow::~MainWindow(){
 
     if(model->is_running()){
         model->disconPing();
-        thread.exit(0);
+        thread.quit();
     }
-    //thread.quit();
+
      delete model;
     delete ui;
 
@@ -129,7 +140,6 @@ void MainWindow::connectSlot(){
     ui->btn_connect->setEnabled(false);
     model->lineEditRead(ui->lineEdit->text());
     model->moveToThread(&thread);
-    ui->statusLbl->setText("Тест запущен");
     thread.start();
 
 }
@@ -137,7 +147,7 @@ void MainWindow::disconnectSlot(){
 ui->btn_disconnect->setEnabled(false);
  ui->btn_connect->setEnabled(true);
     model->disconPing();
-    thread.exit(0);
+    thread.quit();
     ui->statusLbl->setText("Тест остановлен");
     //thread.wait(10);
 

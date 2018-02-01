@@ -230,6 +230,16 @@ debug/moc_mainwindow.cpp: C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/QTcpSoc
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qprocess.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QThread \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qthread.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeventloop.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QMessageBox \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qmessagebox.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
 		mainwindow.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
@@ -442,7 +452,10 @@ debug/main.o: main.cpp mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeventloop.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QMessageBox \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qmessagebox.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -566,11 +579,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qprocess.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QThread \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qthread.h \
-		ui_mainwindow.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -578,52 +586,16 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QCheckBox \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qcheckbox.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QGridLayout \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qgridlayout.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlayout.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qboxlayout.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLineEdit \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlineedit.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextcursor.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextformat.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qpen.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QPushButton \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QSpacerItem \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QTextBrowser \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextedit.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextdocument.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QMessageBox \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qmessagebox.h \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
+		ui_mainwindow.h \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
-		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QFile
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QFile \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDesktopWidget \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QStyle \
+		C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/pingmodel.o: pingmodel.cpp C:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \

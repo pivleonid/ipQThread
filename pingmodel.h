@@ -22,6 +22,7 @@ public:
     
 signals:
     void signalData(QString data);
+    void signalStartData();
     void endThread();
     void signalError();
     

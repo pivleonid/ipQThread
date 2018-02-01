@@ -42,10 +42,12 @@ void PingModel::verifyStatus(){
 
 void PingModel::readResult(){
 
-    running = true;
+
+    if( running == false)
+        return;
     QByteArray a = ping->readAll();
-   // if(a == "")
-     //   return;
+    if(a == "")
+        return;
     QTextCodec* codec =  QTextCodec::codecForName("cp-866");
     QString fio = codec->toUnicode(a.data());
     //В первой посылке должен быть ip
@@ -57,6 +59,7 @@ void PingModel::readResult(){
         if(flag == true){
             if( fio.indexOf("TTL") >= 0){
                 emit signalData(fio);
+                signalStartData();
             }
             else{
                 emit signalError();
@@ -76,11 +79,11 @@ void PingModel::readResult(){
 void PingModel::disconPing(){
     //if(running == false)
      //   return;
-
+running = false;
     QProcess::execute(QString("taskkill /PID %1 /F").arg(ping->processId()));
     QProcess::execute(QString("kill -SIGINT %1").arg(ping->processId()));
     closeProcess = true;
-    running = false;
+ping->finished(0);
     ping->close();
 
 }
@@ -102,6 +105,7 @@ void PingModel::run(){
    //  args << PingModel::ip;
     ping->start(command, args); //вызывает сигнал started()
     flag = false;
+    running = true;
 #endif
 
 }
