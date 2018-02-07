@@ -6,8 +6,8 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-     QDate datel(2018, 01, 1);
-     QDate date2(2018, 01, 31);
+     QDate datel(2018, 02, 1);
+     QDate date2(2018, 04, 1);
      QDate date = QDate::currentDate();
      bool bb = (datel <= date) && (date <= date2 );
      if ( !bb ) exit(255);

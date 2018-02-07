@@ -54,12 +54,14 @@ void PingModel::readResult(){
     if(fio.indexOf(PingModel::ip) >= 0){
         flag = true;
         emit signalData(fio);
+        if( fio.indexOf("TTL") >= 0)
+            emit signalStartData();
     }
     else{
         if(flag == true){
             if( fio.indexOf("TTL") >= 0){
                 emit signalData(fio);
-                signalStartData();
+
             }
             else{
                 emit signalError();

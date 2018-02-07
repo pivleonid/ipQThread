@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QDesktopWidget *pDescwidget = QApplication::desktop();
     move(pDescwidget->width()/2-width()/2, pDescwidget->height()/2-height()/2);
 
-
+    ui->statusLbl->setText("Тест не запущен");
     /* Создаем строку для регулярного выражения */
     QString ipRange = "(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])";
     /* Создаем регулярное выражение с применением строки, как
@@ -79,8 +79,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Чтение настроек
     QFile file("ip.conf");
-     if(file.size() == 0)
-       return;
+     if(file.size() == 0){
+         ui->browser_dbg->setVisible(false);
+         ui->clearText->setVisible(false);
+         QMainWindow::resize(626, 100);
+         QMainWindow::setMaximumSize(626, 100);
+         return;
+     }
      QSettings settings( "ip.conf", QSettings::IniFormat );
      settings.beginGroup( "saveState" );
      bool check = settings.value("check").toBool();
@@ -90,15 +95,24 @@ MainWindow::MainWindow(QWidget *parent) :
      settings.endGroup();
      //
      if(ui->checkBox->isChecked() == false){
-     ui->browser_dbg->setVisible(false);
-     ui->clearText->setVisible(false);
+         ui->browser_dbg->setVisible(false);
+         ui->clearText->setVisible(false);
+         QMainWindow::resize(626, 100);
+         QMainWindow::setMaximumSize(626, 100);
      }
-     QMainWindow::resize(QMainWindow::sizeHint());
-
-
-
-
+     // QMainWindow::resize(QMainWindow::sizeHint());
+     else{
+         QMainWindow::resize(626, 600);
+         QMainWindow::setMaximumSize(626, 600);
+         QMainWindow::resize(626, 600);
+     }
 }
+
+
+
+
+
+
 
 void MainWindow::updateScreen(bool flag){
     if (flag == true){
@@ -147,6 +161,7 @@ void MainWindow::closeEvent(QCloseEvent* event){
 //Слоты
 
 void MainWindow::connectSlot(){
+    ui->statusLbl->setText("Подготовка к запуску");
     ui->btn_disconnect->setEnabled(true);
     ui->btn_connect->setEnabled(false);
     model->lineEditRead(ui->lineEdit->text());
