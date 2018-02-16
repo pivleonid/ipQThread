@@ -12,6 +12,9 @@
 #include <QApplication>
 #include <QMessageBox>
 
+#include <QTimer>
+#include "myudp.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -29,6 +32,10 @@ private:
     QTcpSocket *sock;
     PingModel* model;
     QThread thread;
+    QByteArray dataByte_;
+    QTimer tmr_;
+    MyUDP udp_;
+
 
 public slots:
     void clearSlot();
@@ -43,6 +50,9 @@ public slots:
         disconnectSlot();
         msb.exec();
     }
+    void startTransmitUDP();
+    void stopTransmitUDP();
+    void timerUDP();
 
 };
 
